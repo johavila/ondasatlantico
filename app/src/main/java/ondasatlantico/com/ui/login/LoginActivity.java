@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import ondasatlantico.com.R;
+import ondasatlantico.com.Validate;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -46,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                 loginButton.setEnabled(loginFormState.isDataValid());
                 if (loginFormState.getUsernameError() != null) {
                     usernameEditText.setError(getString(loginFormState.getUsernameError()));
+                }else if (!isEmailValid(usernameEditText.getText().toString())){
+                   usernameEditText.requestFocus();
                 }
                 if (loginFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(loginFormState.getPasswordError()));
@@ -110,10 +113,13 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+
             }
         });
 
-
+    }
+    private boolean isEmailValid (String email){
+        return Validate.isEmail(email);
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
