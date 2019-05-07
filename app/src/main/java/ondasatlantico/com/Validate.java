@@ -1,5 +1,7 @@
 package ondasatlantico.com;
 
+import android.util.Patterns;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,11 +11,16 @@ public class Validate {
 
     // Valida que se escriba un Email Correctamente
     public static boolean isEmail (String email) {
-        pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\.[\\w\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
-        mat = pat.matcher(email);
-        if (mat.find()) {
-            return true;
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return false;
         } else {
+            return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        }
+    }
+    public static boolean isPassword (String password) {
+        if (password!=null && password.length()>7){
+            return true;
+        }else{
             return false;
         }
     }
