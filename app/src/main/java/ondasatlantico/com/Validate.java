@@ -18,7 +18,7 @@ public class Validate {
         }
     }
     public static boolean isPassword (String password) {
-        if (password!=null && password.length()>7){
+        if (password!=null && password.length()>5){
             return true;
         }else{
             return false;
