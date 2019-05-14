@@ -14,8 +14,8 @@
     <string name="menu_slideshow">Diapositivas</string>
     <string name="menu_tools">Herramientas</string>
     <string name="nav_header_desc">Encabezado de navegación</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">ondasatlnatico@gmail.com</string>
+    <string name="nav_header_title">Programa Ondas Atlantico</string>
     <string name="navigation_drawer_close">Cerrar la caja de navegacion</string>
     <string name="navigation_drawer_open">Abrir la caja de navegacion</string>
     <string name="prompt_email">Ingrese su Email</string>
@@ -23,4 +23,9 @@
     <string name="title_activity_login">Iniciar Sesión</string>
     <string name="welcome">Bienvenido</string>
     <string name="errorauth">Error en la Autenticación</string>
+    <string name="menu_adviser">Asesor</string>
+    <string name="nav_adviser">Asesor</string>
+    <string name="menu_calendar">Agendas Visita</string>
+    <string name="menu_group">Grupo de Investigación</string>
+
 </resources>
