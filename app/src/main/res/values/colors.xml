@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <!--Color para la Seccion Login-->
     <color name="colortext">#FFFFFF</color>
+    <color name="Button">#32068577</color>
 </resources>

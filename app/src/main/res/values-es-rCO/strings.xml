@@ -23,9 +23,9 @@
     <string name="title_activity_login">Iniciar Sesión</string>
     <string name="welcome">Bienvenido</string>
     <string name="errorauth">Error en la Autenticación</string>
-    <string name="menu_adviser">Asesor</string>
-    <string name="nav_adviser">Asesor</string>
-    <string name="menu_calendar">Agendas Visita</string>
+    <string name="menu_adviser">Asesorias</string>
+    <string name="nav_adviser">Asesorias</string>
+    <string name="menu_calendar">Agendas Asesoria</string>
     <string name="menu_group">Grupo de Investigación</string>
 
 </resources>
