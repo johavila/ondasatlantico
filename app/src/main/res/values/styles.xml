@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="tooltipForegroundColor">@color/foreground</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,8 +18,18 @@
     <style name="CampoTextoBlanco" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/colortext</item>
         <item name="colorControlActivated">@color/colortext</item>
-        <item name="android:textColorHighlight">@color/colortext</item>
+        <item name="android:textColorHighlight">@color/foreground</item>
         <item name="colorAccent">@color/colortext</item>
+
+    </style>
+
+    <style name="AppThemeDesign" parent="Theme.Design.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- texto del input text-->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!-- color del cursor, linea y etiqueta de los EditText-->
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

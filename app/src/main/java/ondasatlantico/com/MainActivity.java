@@ -15,7 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-import ondasatlantico.com.ui.login.LoginActivity;
+import ondasatlantico.com.Utils.Activity_Asesorias;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_adviser) {
-
+            Intent intent = new Intent(MainActivity.this, Activity_Asesorias.class);
+            startActivity(intent);
         } else if (id == R.id.nav_group) {
 
         } else if (id == R.id.nav_calendar) {
