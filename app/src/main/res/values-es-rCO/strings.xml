@@ -27,5 +27,8 @@
     <string name="nav_adviser">Asesorias</string>
     <string name="menu_calendar">Agendas Asesoria</string>
     <string name="menu_group">Grupo de Investigación</string>
+    <string name="invalid_auth">El correo o el Password no Coinciden</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="formato_hora">hh:mm</string>
 
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -55,8 +56,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
-                                    Toast toast = Toast.makeText(_activity, Res.getText(string.errorauth),Toast.LENGTH_LONG);
-                                   toast.show();
+                                    PasswordText.setError(getText(string.invalid_auth));
+                                    PasswordText.requestFocus();
                                }
                             });
 

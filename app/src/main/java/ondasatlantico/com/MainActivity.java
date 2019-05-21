@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private CardView card_asesorias, card_grupos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         CardView card_asesorias = findViewById(R.id.card_asesorias);
-        CardView card_grupos=findViewById(R.id.card_grupos_inv);
+        CardView card_grupos = findViewById(R.id.card_grupos_inv);
+
 
         card_asesorias.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-
 
         card_grupos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +73,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-
-
 
     @Override
     public void onBackPressed() {
@@ -116,8 +115,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_adviser) {
-            Intent intent = new Intent(MainActivity.this, Activity_Asesorias.class);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, Activity_Asesorias.class));
         } else if (id == R.id.nav_group) {
 
         } else if (id == R.id.nav_calendar) {
@@ -132,4 +130,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
