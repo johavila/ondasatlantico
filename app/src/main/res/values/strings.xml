@@ -29,4 +29,9 @@
     <string name="invalid_auth">Mail or Password does not match</string>
     <string name="formato_fecha">formato_fecha</string>
     <string name="formato_hora">formato_hora</string>
+    <string name="crear_grupo">create group</string>
+    <string name="name">name</string>
+    <string name="sede">headquarters</string>
+    <string name="municipio">municipality</string>
+    <string name="save">save</string>
 </resources>

@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import ondasatlantico.com.Utils.Activity_Asesorias;
+import ondasatlantico.com.views.CreateGroup;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,9 +48,8 @@ public class MainActivity extends AppCompatActivity
         card_grupos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Activity_Asesorias.class);
+                Intent i = new Intent(MainActivity.this, CreateGroup.class);
                 startActivity(i);
-
             }
         });
 

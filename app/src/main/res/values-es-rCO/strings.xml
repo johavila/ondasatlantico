@@ -30,5 +30,10 @@
     <string name="invalid_auth">El correo o el Password no Coinciden</string>
     <string name="formato_fecha">dd/mm/yyyy</string>
     <string name="formato_hora">hh:mm</string>
+    <string name="crear_grupo">crear grupo</string>
+    <string name="name">nombre</string>
+    <string name="sede">sede</string>
+    <string name="municipio">municipio</string>
+    <string name="save">guardar</string>
 
 </resources>
