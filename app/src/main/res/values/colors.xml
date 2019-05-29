@@ -2,10 +2,11 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#AE009688</color>
     <!--Color para la Seccion Login-->
     <color name="colortext">#FFFFFF</color>
     <color name="foreground">#474747</color>
     <color name="Button">#BED3D0D0</color>
-    <color name="colortextbutton">#0F0C0C0C</color>
+    <color name="labelColor">#D1F2EB</color>
+    <color name="colortextbutton">#000000</color>
 </resources>

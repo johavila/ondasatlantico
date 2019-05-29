@@ -33,5 +33,18 @@
     <string name="name">name</string>
     <string name="sede">headquarters</string>
     <string name="municipio">municipality</string>
-    <string name="save">save</string>
+    <string name="save">Save</string>
+    <string-array name="tp_visit">
+        <item>Selection</item>
+        <item>Presential</item>
+        <item>Virtual</item>
+    </string-array>
+    <string-array name="tp_sede">
+        <item>Type of headquarters</item>
+        <item>Principal</item>
+        <item>Assistant</item>
+    </string-array>
+
+    <string name="saved_ok">Registry Was Saved Correctly</string>
+    <string name="title_activity_group_view">Group List</string>
 </resources>

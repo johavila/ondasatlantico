@@ -39,17 +39,14 @@ public class MainActivity extends AppCompatActivity
         card_asesorias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Activity_Asesorias.class);
-                startActivity(i);
-
+               startActivity(new Intent(MainActivity.this, Activity_Asesorias.class));
             }
         });
 
         card_grupos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CreateGroup.class);
-                startActivity(i);
+                startActivity(new Intent(MainActivity.this, GroupView.class));
             }
         });
 
@@ -112,12 +109,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-
-        } else if (id == R.id.nav_adviser) {
-            startActivity(new Intent(MainActivity.this, Activity_Asesorias.class));
+        if (id == R.id.nav_adviser) {
+            startActivity(new Intent(MainActivity.this,  Activity_Asesorias.class));
         } else if (id == R.id.nav_group) {
-
+            startActivity(new Intent(MainActivity.this, GroupView.class));
         } else if (id == R.id.nav_calendar) {
 
         } else if (id == R.id.nav_share) {

@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import ondasatlantico.com.MainActivity;
+import ondasatlantico.com.R;
 import ondasatlantico.com.Validate;
 import static ondasatlantico.com.R.*;
 
@@ -44,22 +45,22 @@ public class LoginActivity extends AppCompatActivity {
             String password = PasswordText.getText().toString();
             loadingProgressBar.setVisibility(View.VISIBLE);
             if (!validateEmail(EmailText.getText().toString())){
-                EmailText.setError(getText(string.invalid_username));
+                EmailText.setError(getText(R.string.invalid_username));
                 EmailText.requestFocus();
             }else if (!validatePassword(PasswordText.getText().toString())){
-                PasswordText.setError(getText(string.invalid_password));
+                PasswordText.setError(getText(R.string.invalid_password));
                 PasswordText.requestFocus();
             }else {
                 mAuth.signInWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(this, task -> {
-                                if (task.isSuccessful()) {
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                } else {
-                                    PasswordText.setError(getText(string.invalid_auth));
-                                    PasswordText.requestFocus();
-                               }
-                            });
+                        .addOnCompleteListener(this, task -> {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                PasswordText.setError(getText(R.string.invalid_auth));
+                                PasswordText.requestFocus();
+                            }
+                        });
 
              }
         });

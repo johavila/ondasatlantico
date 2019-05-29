@@ -29,9 +29,7 @@ public class Activity_Asesorias extends AppCompatActivity implements View.OnClic
     final int dia = c.get(Calendar.DAY_OF_MONTH);
     final int anio = c.get(Calendar.YEAR);
 
-    //Variables para obtener la hora hora
-    final int hora = c.get(Calendar.HOUR_OF_DAY);
-    final int minuto = c.get(Calendar.MINUTE);
+
 
     //Widgets
     EditText etFecha;
@@ -41,12 +39,12 @@ public class Activity_Asesorias extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asesorias);
 
-        //Widget EditText donde se mostrara la fecha obtenida y la Hora
+        //Widget EditText donde se mostrara la fecha obtenida
         etFecha = (EditText) findViewById(R.id.et_mostrar_fecha_picker);
-        etHora = (EditText) findViewById(R.id.et_mostrar_hora_picker);
+
         //Evento setOnClickListener - clic
         etFecha.setOnClickListener(this);
-        etHora.setOnClickListener(this);
+
     }
 
     @Override
@@ -56,36 +54,8 @@ public class Activity_Asesorias extends AppCompatActivity implements View.OnClic
                 obtenerFecha();
                 break;
 
-            case R.id.et_mostrar_hora_picker:
-                obtenerHora();
-                break;
+
         }
-    }
-
-    private void obtenerHora() {
-        TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                //Formateo el hora obtenido: antepone el 0 si son menores de 10
-                String horaFormateada =  (hourOfDay < 10)? String.valueOf(CERO + hourOfDay) : String.valueOf(hourOfDay);
-                //Formateo el minuto obtenido: antepone el 0 si son menores de 10
-                String minutoFormateado = (minute < 10)? String.valueOf(CERO + minute):String.valueOf(minute);
-                //Obtengo el valor a.m. o p.m., dependiendo de la selección del usuario
-                String AM_PM;
-                if(hourOfDay < 12) {
-                    AM_PM = "a.m.";
-                } else {
-                    AM_PM = "p.m.";
-                }
-                //Muestro la hora con el formato deseado
-                etHora.setText(horaFormateada + DOS_PUNTOS + minutoFormateado + " " + AM_PM);
-            }
-
-            //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
-            //Pero el sistema devuelve la hora en formato 24 horas
-        }, hora, minuto, false);
-
-        recogerHora.show();
     }
 
 

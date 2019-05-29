@@ -35,5 +35,16 @@
     <string name="sede">sede</string>
     <string name="municipio">municipio</string>
     <string name="save">guardar</string>
-
+    <string-array name="tp_visit">
+        <item>Tipo de Visita</item>
+        <item>Presencial</item>
+        <item>Virtual</item>
+    </string-array>
+    <string-array name="tp_sede">
+        <item>Tipo de Sede</item>
+        <item>Principal</item>
+        <item>Auxiliar</item>
+    </string-array>
+    <string name="saved_ok">El Registro se Guardado Correctamente</string>
+    <string name="title_activity_group_view">Lista de Grupos</string>
 </resources>
