@@ -1,6 +1,18 @@
 package ondasatlantico.com.modelo;
 
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+
 public class GrupoInvestigacion {
+    private String id;
     private String nombre;
     private String municipio;
     private String sede;
@@ -13,6 +25,15 @@ public class GrupoInvestigacion {
         this.municipio = municipio;
         this.sede = sede;
     }
+
+    public GrupoInvestigacion(String id, String nombre, String municipio, String sede) {
+        this.id = id;
+        this.nombre = nombre;
+        this.municipio = municipio;
+        this.sede = sede;
+    }
+
+    public String getId() { return id; }
 
     public String getNombre() {
         return nombre;
@@ -36,8 +57,5 @@ public class GrupoInvestigacion {
 
     public void setSede(String sede) {
         this.sede = sede;
-    }
-
-    public void saveGroup(){
     }
 }

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -23,6 +25,8 @@ import ondasatlantico.com.modelo.GrupoInvestigacion;
 public class CreateGroup extends AppCompatActivity {
     private EditText txt_nombre, txt_municipio, txt_sede;
     private Button bt_save;
+    private FirebaseDatabase mydb = FirebaseDatabase.getInstance();
+    private DatabaseReference ref = mydb.getReference("grupos");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,37 +42,16 @@ public class CreateGroup extends AppCompatActivity {
         bt_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String group_name = txt_nombre.getText().toString();
-                String group_municipio = txt_municipio.getText().toString();
-                String group_sede = txt_sede.getText().toString();
-                GrupoInvestigacion group = new GrupoInvestigacion(group_name, group_municipio, group_sede);
-
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-                // Create a new user with a first and last name
-                Map<String, Object> user = new HashMap<>();
-                user.put("first", "Ada");
-                user.put("last", "Lovelace");
-                user.put("born", 1815);
-
-                // Add a new document with a generated ID
-                db.collection("grupos")
-                        .add(group)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d("", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                Toast.makeText(getApplicationContext(),"EXITO", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("", "Error adding document", e);
-                                Toast.makeText(getApplicationContext(),"Falló", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                saveProduct(v);
             }
         });
+    }
+
+    public void saveProduct(View view) {
+        String code = txt_nombre.getText().toString() + (Math.random());
+        String name = txt_nombre.getText().toString();
+        String municipio = txt_municipio.getText().toString();
+        String sede = txt_sede.getText().toString();
+        ref.child(name).setValue(new GrupoInvestigacion(code, name, municipio, sede));
     }
 }

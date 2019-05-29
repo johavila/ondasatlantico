@@ -18,6 +18,7 @@ import android.view.Menu;
 
 import ondasatlantico.com.Utils.Activity_Asesorias;
 import ondasatlantico.com.views.CreateGroup;
+import ondasatlantico.com.views.GroupList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         card_grupos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CreateGroup.class);
+                Intent i = new Intent(MainActivity.this, GroupList.class);
                 startActivity(i);
             }
         });
@@ -57,10 +58,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
+                Intent i = new Intent(MainActivity.this, CreateGroup.class);
+                startActivity(i);
             }
         });
 
