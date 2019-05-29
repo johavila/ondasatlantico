@@ -26,13 +26,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProductsViewHolder> {
 
     @Override
     public void onBindViewHolder(ProductsViewHolder holder, int position) {
-        for (int i = 0; i < products.size(); i++) {
-            GrupoInvestigacion producto = products.get(i);
+            GrupoInvestigacion producto = products.get(position);
             holder.txtCodigoCard.setText("Código: "+producto.getId());
             holder.txtNameCard.setText("Nombre del grupo: "+producto.getNombre());
             holder.txtSedeCard.setText("Nombre de la sede: "+producto.getSede());
             holder.txtDescription.setText("Nombre del municipio: "+producto.getMunicipio());
-        }
     }
 
     @Override

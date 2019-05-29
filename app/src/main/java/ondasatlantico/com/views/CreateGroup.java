@@ -1,5 +1,6 @@
 package ondasatlantico.com.views;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+import ondasatlantico.com.MainActivity;
 import ondasatlantico.com.R;
 import ondasatlantico.com.modelo.GrupoInvestigacion;
 
@@ -48,10 +50,19 @@ public class CreateGroup extends AppCompatActivity {
     }
 
     public void saveProduct(View view) {
-        String code = txt_nombre.getText().toString() + (Math.random());
-        String name = txt_nombre.getText().toString();
-        String municipio = txt_municipio.getText().toString();
-        String sede = txt_sede.getText().toString();
-        ref.child(name).setValue(new GrupoInvestigacion(code, name, municipio, sede));
+        String name, municipio, sede;
+        name = txt_nombre.getText().toString();
+        municipio = txt_municipio.getText().toString();
+        sede = txt_sede.getText().toString();
+
+        if(name.isEmpty() || municipio.isEmpty() || sede.isEmpty()) {
+            Toast.makeText(getApplicationContext(),"Faltan campos por llenar", Toast.LENGTH_LONG).show();
+        }else{
+            String code = "asd234";
+            ref.child(name).setValue(new GrupoInvestigacion(code, name, municipio, sede));
+            Toast.makeText(getApplicationContext(),"Guardado", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(CreateGroup.this, GroupList.class);
+            startActivity(i);
+        }
     }
 }
